@@ -21,8 +21,6 @@ group :doc do
   gem 'sdoc', require: false
 end
 
-# Use ActiveModel has_secure_password
-
 group :test, :development do
   gem 'rspec-rails'
   gem 'pry'
