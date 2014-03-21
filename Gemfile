@@ -13,11 +13,10 @@ gem 'turbolinks'
 group :assets do
   gem 'coffee-rails', '~> 4.0.0'
   gem 'sass-rails', '~> 4.0.2'
-  gem 'uglifier', '>= 1.3.0'
-  
+  gem 'uglifier', '>= 1.3.0'  
 end
 
-gem 'angularjs-rails', '~> 1.2.14'
+
 
 group :doc do
   # bundle exec rake doc:rails generates the API under doc/api.
