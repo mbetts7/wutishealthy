@@ -9,4 +9,4 @@
 
 # Make sure your secret_key_base is kept private
 # if you're sharing your code publicly.
-Wutishealthy::Application.config.secret_key_base = '6fca9b99fa25e84e28a6423ef2564c04daaabad1f0663e825ba80eb3570ff88ab72b60882872f124ae918d6f3e879e40c92763484608fa6f6ced63e56aede244'
+Wutishealthy::Application.config.secret_key_base = ENV['SECRET_KEY_BASE']
