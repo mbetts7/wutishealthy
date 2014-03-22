@@ -9,6 +9,8 @@ gem 'devise'
 gem 'bcrypt', '~> 3.1.7'
 # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
 gem 'turbolinks'
+gem 'angularjs-rails', '~> 1.2.14'
+gem 'angular-ui-bootstrap-rails'
 
 group :assets do
   gem 'coffee-rails', '~> 4.0.0'
