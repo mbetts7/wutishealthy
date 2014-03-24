@@ -1,0 +1,9 @@
+<h1> SiteFeed </h1>
+
+<div ng-controller="feedCtrl">
+  <div ng-repeat="entry in entries">
+    <div> <img src={{entry.img}} /></div>
+    <div>{{entry.links}}</div>
+    <div>{{entry.question}}</div><br>
+  </div>
+</div>
