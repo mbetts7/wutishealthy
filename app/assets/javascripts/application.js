@@ -15,4 +15,5 @@
 //= require angular
 //= require angular-route
 //= require angular-resource
+//= require s3_direct_upload
 //= require_tree .
