@@ -1,14 +1,14 @@
-wutIsHealthyApp = angular.module("wutIsHealthy", [])
+wutIsHealthyApp = angular.module "wutIsHealthy", []
 
 @feedCtrl = ["$scope", ($scope) ->
   $scope.entries = [
-    {img: "images/nutrition_label_1.jpg", 
+    {img: "/images/nutrition_label_1.jpg", 
     links: "http://www.alz.org/alzheimers_disease_facts_and_figures.asp#quickFacts", 
     question: "Is this healthy?",
     answers: [a: "healthy", b: "false"] 
     }
     
-    {img: "images/sugar_words.jpg", 
+    {img: "/images/sugar_words.jpg", 
     links: null, 
     question: "Are these all unhealthy?",
     answers: [a: "healthy", b: "false"]
@@ -22,4 +22,4 @@ wutIsHealthyApp = angular.module("wutIsHealthy", [])
   ]
 ]
 
-rafflerApp.controller "feedCtrl", feedCtrl
+wutIsHealthyApp.controller "feedCtrl", feedCtrl
