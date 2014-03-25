@@ -1,8 +1,21 @@
-// Place all the styles related to the sites controller here.
-// They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+// font-family: 'Permanent Marker', cursive;
+// font-family: 'Walter Turncoat', cursive;
+// font-family: 'Fontdiner Swanky', cursive;
+// font-family: 'Oswald', sans-serif;
+// font-family: 'Indie Flower', cursive;
+// font-family: 'Rock Salt', cursive;
+// font-family: 'Special Elite', cursive;
+// font-family: 'Orbitron', sans-serif;
+// font-family: 'Architects Daughter', cursive;
+// https://www.google.com/fonts#UsePlace:use/Collection:Permanent+Marker|Walter+Turncoat|Fontdiner+Swanky|Oswald|Indie+Flower|Rock+Salt|Special+Elite|Architects+Daughter
 
 .bg_site {
+  background-color: #404041;
+  font-family: 'Oswald', sans-serif;
+}
+
+.bg_feed {
   background-color: #404041;
   color: white;
 }
@@ -10,6 +23,7 @@
 .bg_nav {
   background-color: #a4d640;
   border-color: #a4d640;
+  font-family: 'Oswald', sans-serif;
 }
 
 .navbar-default .navbar-brand {
@@ -18,4 +32,10 @@ color: #f6f7f4;
 
 .navbar-default .navbar-nav>li>a {
 color: #f6f7f4;
+}
+
+img {
+    max-width: 80%;
+    height: auto;
+    width: auto\6; /* ie8 */
 }
