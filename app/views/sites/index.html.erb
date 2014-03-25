@@ -1,7 +1,10 @@
 <%= render 'layouts/nav' %>
 <div class="bg_feed">
 
-  <h1> SiteFeed </h1>
+  <h1> Who do you trust when it comes to your health?</h1>
+    <h2>Curious about something?...<%= link_to "Post it hear and poll the public", "/" %></h2>
+
+    <h2> Trending posts - vote your opinion! </h2>
 
   <div ng-controller="feedCtrl">
     <div ng-repeat="entry in entries">

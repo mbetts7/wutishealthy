@@ -14,6 +14,7 @@
 #  question               :string(255)
 #  created_at             :datetime
 #  updated_at             :datetime
+#  user_id                :integer
 #
 
 class Entry < ActiveRecord::Base

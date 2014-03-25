@@ -2,8 +2,7 @@ wutIsHealthyApp = angular.module "wutIsHealthy", []
 
 @feedCtrl = ["$scope", ($scope) ->
   $scope.entries = [
-    {img: "https://s3.amazonaws.com/WutIsHealthy/nutrition_label_1.jpg", 
-    links: "http://www.alz.org/alzheimers_disease_facts_and_figures.asp#quickFacts", 
+    {links: "http://www.alz.org/alzheimers_disease_facts_and_figures.asp#quickFacts", 
     question: "Is this healthy?",
     answers: [a: "healthy", b: "false"] 
     }
