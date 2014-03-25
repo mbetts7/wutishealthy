@@ -8,12 +8,11 @@
 
   <div ng-controller="feedCtrl">
     <div ng-repeat="entry in entries">
-      <div style="max-width:500px;">
-        <img ng-src="{{entry.img}}" />
+      <div>
+        <div>{{entry.links}}</div>
+        <div>{{entry.question}}</div>
+        <div>{{entry.answers}}</div><br>
       </div>
-      <div>{{entry.links}}</div>
-      <div>{{entry.question}}</div>
-      <div>{{entry.answers}}</div><br>
     </div>
   </div>
 

@@ -6,6 +6,11 @@ Devise.setup do |config|
   # confirmation, reset password and unlock tokens in the database.
   config.secret_key = ENV['DEVISE_SECRET']
 
+  config.omniauth :twitter, ENV["CONSUMERKEY"], ENV["CONSUMERSECRET"]
+
+  config.omniauth :twitter, AppConfig.twitter['clientId'],
+                            AppConfig.twitter['clientSecret']
+
   # ==> Mailer Configuration
   # Configure the e-mail address which will be shown in Devise::Mailer,
   # note that it will be overwritten if you use your own mailer class

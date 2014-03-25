@@ -12,6 +12,9 @@ gem 'turbolinks'
 gem 'angularjs-rails', '~> 1.2.14'
 # https://github.com/waynehoover/s3_direct_upload
 gem 's3_direct_upload'
+gem 'omniauth'
+gem 'omniauth-twitter'
+gem 'uuidtools'
 
 group :assets do
   gem 'coffee-rails', '~> 4.0.0'
