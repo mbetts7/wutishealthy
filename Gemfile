@@ -15,6 +15,7 @@ gem 's3_direct_upload'
 gem 'omniauth'
 gem 'omniauth-twitter'
 gem 'uuidtools'
+gem 'angular-ui-bootstrap-rails'
 
 group :assets do
   gem 'coffee-rails', '~> 4.0.0'
