@@ -1,12 +1,14 @@
 <%= render 'layouts/nav' %>
-<div class="bg_feed">
+<div class="bg_feed" ng-controller="feedCtrl">
 
   <h1> Who do you trust when it comes to your health?</h1>
     <h2>Curious about something?...<%= link_to "Post it hear and poll the public", "/" %></h2>
+    <button class="btn" ng-click="open()">Post it here and poll the public</button>
+    <%= render partial: 'entries/create' %>
 
     <h2> Trending posts - vote your opinion! </h2>
 
-  <div ng-controller="feedCtrl">
+  <div>
     <div ng-repeat="entry in entries">
       <div>
         <div>{{entry.link_url}}</div>
