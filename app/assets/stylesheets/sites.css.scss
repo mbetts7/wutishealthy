@@ -27,17 +27,17 @@
 }
 
 .navbar-default .navbar-brand {
-color: #f6f7f4;
+  color: #f6f7f4;
 }
 
 .navbar-default .navbar-nav>li>a {
-color: #f6f7f4;
+  color: #f6f7f4;
 }
 
 img {
-    max-width: 80%;
-    height: auto;
-    width: auto\6; /* ie8 */
+  max-width: 80%;
+  height: auto;
+  width: auto\6; /* ie8 */
 }
 
 #create_entry {
@@ -45,4 +45,8 @@ img {
   color: black;
   border: 5px groove #a4d640;
   padding: 3px;
+}
+
+#myModal {
+  color: black;
 }

@@ -3,10 +3,23 @@
     <div class="modal-content">
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-        <h4 class="modal-title" id="myModalLabel">Modal title</h4>
+        <h4 class="modal-title" id="myModalLabel">Post a link and poll the public</h4>
       </div>
       <div class="modal-body">
-        <label>Enter a link</label>
+        <form ng-submit="submit()" role="form">
+          <div class="form-group row">
+            <div class="col-xs-12">
+              <label for="code">Enter a link related to your question (optional):</label><br>
+                <input type="text" ng-model="link" ng-keyup="linkChecker()" ng-style="" class="form-control" /><br>
+            </div>
+          </div>
+          <div class="form-group row">
+            <div class="col-xs-12">
+              <label for="code">Create a true or false question:</label><br>
+                <input type="text" ng-model="link" ng-keyup="linkChecker()" ng-style="" class="form-control" /><br>
+            </div>
+          </div>
+        </form>
       </div>
       <div class="modal-footer">
         <button class="btn btn-primary" ng-click="submit()" data-dismiss="modal">Submit</button>
