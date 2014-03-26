@@ -1,0 +1,1 @@
+WutsHealthyApp = angular.module "WutsHealthy", ["feedCtrl"]
