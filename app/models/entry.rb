@@ -16,6 +16,8 @@
 #  updated_at             :datetime
 #  user_id                :integer
 #  readability_short_url  :string(255)
+#  vote_yes               :integer          default(0)
+#  vote_no                :integer          default(0)
 #
 
 class Entry < ActiveRecord::Base
