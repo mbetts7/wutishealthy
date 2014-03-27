@@ -12,7 +12,7 @@ feedCtrl.controller 'feedCtrl', ["$scope", "Entry", "$http"
         url: readability_api_link
       ).success((data) ->
         console.log(data)
-        $scope.theStatus = "success"
+        $scope.link_info = data
         # if 200-299 success code then show green ng-style
         # grab object and store it in variable for use in save
       ).error (data) ->
@@ -24,6 +24,15 @@ feedCtrl.controller 'feedCtrl', ["$scope", "Entry", "$http"
     $scope.open = ->
       $scope.createEntryModal = true
     $scope.submit = () ->
+      entry = {}
+      entry.readability_title = $scope.link_info.title
+      entry.readability_domain = $scope.link_info.domain
+      entry.readability_excerpt = $scope.link_info.excerpt
+      entry.readability_word_count = $scope.link_info.word_count
+      entry.readability_short_url = $scope.link_info.short_url
+      entry.question = $scope.question
+      Entry.save(entry)
+      console.log(entry)
       # grab object from link checker and question submitted
       # append object to DOM
     $scope.cancel = ->
