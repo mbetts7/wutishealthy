@@ -1,7 +1,8 @@
 <%= render 'layouts/nav' %>
 
 <div class="bg_feed col-xs-12" ng-controller="feedCtrl">
-  <h2> Trending in the health scene: </h2><button class="btn btn-warning btn-lg" ng-click="open()" data-toggle="modal" data-target="#myModal">Post a link and poll the public</button>
+  <h2> Trending in the health scene: </h2>
+  <button class="btn btn-warning btn-md" ng-click="open()" data-toggle="modal" data-target="#myModal">Post a link and poll the public</button>
     <%= render partial: 'entries/create' %>
   <div>
     <div ng-repeat="entry in entries">
@@ -26,7 +27,7 @@
           <!-- Question and progress bar-->
           <!-- Progress bar -->
           <div class="col-xs-10">
-            <div class="question text-center">
+            <div class="question">
               <h4>Yes or No: {{entry.question}}</h4>
             </div>
             <div class="progress progress-striped">
