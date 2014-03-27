@@ -15,6 +15,7 @@
 #  created_at             :datetime
 #  updated_at             :datetime
 #  user_id                :integer
+#  readability_short_url  :string(255)
 #
 
 class Entry < ActiveRecord::Base
