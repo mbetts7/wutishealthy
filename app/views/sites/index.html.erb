@@ -1,6 +1,6 @@
 <%= render 'layouts/nav' %>
 
-<div class="bg_feed col-xs-10" ng-controller="feedCtrl">
+<div class="bg_feed col-xs-12" ng-controller="feedCtrl">
   <button class="btn btn-primary btn-lg" ng-click="open()" data-toggle="modal" data-target="#myModal">Post a link and poll the public</button>
     <%= render partial: 'entries/create' %>
   <h2> Trending in the health scene: </h2>
@@ -9,12 +9,12 @@
     <div ng-repeat="entry in entries">
       <div class="col-xs-10">
         <h3 class="article-title">
-          <a href="{{entry.link_url}}">
+          <a href="{{entry.link_url}}" target="_blank">
             {{entry.readability_title}}
           </a>
         </h3>
         <p class="article-word-count"><em>
-          <a href="{{entry.link_url}}" class="article-origin">
+          <a href="{{entry.link_url}}" class="article-origin" target="_blank">
             {{entry.readability_domain}} 
           </a>
             <span> |  word count: </span>{{entry.readability_word_count}}  |  posted: {{entry.created_at}}</em>
