@@ -1,14 +1,12 @@
 <%= render 'layouts/nav' %>
 
 <div class="bg_feed col-xs-12" ng-controller="feedCtrl">
-  <button class="btn btn-primary btn-lg" ng-click="open()" data-toggle="modal" data-target="#myModal">Post a link and poll the public</button>
+  <h2> Trending in the health scene: </h2><button class="btn btn-warning btn-lg" ng-click="open()" data-toggle="modal" data-target="#myModal">Post a link and poll the public</button>
     <%= render partial: 'entries/create' %>
-  <h2> Trending in the health scene: </h2>
-  
   <div>
     <div ng-repeat="entry in entries">
-        <div class="col-xs-10">
-          <div class="row"><hr></div>
+        <div class="col-xs-10 entry_border">
+          
           <h3 class="article-title">
             <a href="{{entry.link_url}}" target="_blank">
               {{entry.readability_title}}

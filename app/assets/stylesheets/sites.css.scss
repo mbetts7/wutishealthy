@@ -15,14 +15,16 @@
   font-family: 'Oswald', sans-serif;
 }
 
+
 .bg_feed {
   background-color: #404041;
   color: white;
 }
 
 .bg_nav {
-  background-color: #a4d640;
-  border-color: #a4d640;
+  background-color: #8C8C8D;
+  border-color: #8C8C8D;
+
   font-family: 'Oswald', sans-serif;
 }
 
@@ -43,3 +45,10 @@ img {
 #myModal {
   color: black;
 }
+
+.entry_border {
+  padding-bottom: 8px;
+  border-bottom: 1px solid #8C8C8D; 
+}
+
+
