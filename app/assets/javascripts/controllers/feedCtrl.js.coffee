@@ -38,4 +38,26 @@ feedCtrl.controller 'feedCtrl', ["$scope", "Entry", "$http"
     $scope.cancel = ->
       $scope.createEntryModal = false
 
+    $scope.voteYes = (entry) ->
+      entry.votes = entry.votes || {}
+      entry.votes.total = entry.votes.total || 0
+      entry.votes.yes = entry.votes.yes || 0
+      entry.votes.total += 1
+      entry.votes.yes +=1
+      entry.votes.yes_percentage = entry.votes.yes / entry.votes.total * 100
+      entry.votes.no_percentage = 100 - entry.votes.yes_percentage
+      console.log(entry.votes.yes_percentage)
+      console.log(entry.votes.no_percentage)
+
+    $scope.voteNo = (entry) ->
+      entry.votes = entry.votes || {}
+      entry.votes.total = entry.votes.total || 0
+      entry.votes.no = entry.votes.no || 0
+      entry.votes.yes_percentage = entry.votes.yes_percentage || 0
+      entry.votes.no_percentage = entry.votes.no_percentage || 0
+      entry.votes.total += 1
+      entry.votes.no +=1
+      entry.votes.no_percentage = 100 - entry.votes.yes_percentage
+      console.log(entry.votes.yes_percentage)
+      console.log(entry.votes.no_percentage)
 ]
