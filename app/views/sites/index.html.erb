@@ -7,27 +7,43 @@
   
   <div>
     <div ng-repeat="entry in entries">
-      <div class="col-xs-10">
-        <h3 class="article-title">
-          <a href="{{entry.link_url}}" target="_blank">
-            {{entry.readability_title}}
-          </a>
-        </h3>
-        <p class="article-word-count"><em>
-          <a href="{{entry.link_url}}" class="article-origin" target="_blank">
-            {{entry.readability_domain}} 
-          </a>
-            <span> |  word count: </span>{{entry.readability_word_count}}  |  posted: {{entry.created_at}}</em>
-        </p>
-        <div class="excerpt">
-          <p class="excerpt-bod" >
-            Excerpt: {{entry.readability_excerpt}} <span class="user-inline"> posted by: {{entry.user.user_email}}</span>
+        <div class="col-xs-10">
+          <div class="row"><hr></div>
+          <h3 class="article-title">
+            <a href="{{entry.link_url}}" target="_blank">
+              {{entry.readability_title}}
+            </a>
+          </h3>
+          <p class="article-word-count"><em>
+            <a href="{{entry.link_url}}" class="article-origin" target="_blank">
+              {{entry.readability_domain}} 
+            </a>
+              <span> |  word count: </span>{{entry.readability_word_count}}  |  posted: {{entry.created_at}}</em>
           </p>
-        </div>  
-        <div class="question">
-          <h4>Yes or No: {{entry.question}}</h4>
-        </div><br>
-      </div>
+          <div class="excerpt">
+            <p class="excerpt-bod" >
+              Excerpt: {{entry.readability_excerpt}} <span class="user-inline"> posted by: {{entry.user.user_email}}</span>
+            </p>
+          </div>  
+          <!-- Question and progress bar-->
+          <!-- Progress bar -->
+          <div class="col-xs-10">
+            <div class="question text-center">
+              <h4>Yes or No: {{entry.question}}</h4>
+            </div>
+            <div class="progress progress-striped">
+              <div class="progress-bar progress-bar-success" style="width: 55%">
+                <span class="sr-only">45% Complete</span>
+              </div>
+              <div class="progress-bar progress-bar-danger" style="width: 45%">
+                <span class="sr-only">20% Complete (warning)</span>
+              </div>
+            </div>
+            <button class="btn btn-success pull-left">Vote Yes</button>
+            <button class="btn btn-danger pull-right">Vote No</button>
+          </div>
+        </div>
     </div>
   </div>
+
 </div>
