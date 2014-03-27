@@ -16,6 +16,7 @@
 //= require angular-animate
 //= require angular-route
 //= require angular-resource
+//= require angular-sanitize
 //= require angular-ui-bootstrap
 //= require angular-ui-bootstrap-tpls
 //= require s3_direct_upload

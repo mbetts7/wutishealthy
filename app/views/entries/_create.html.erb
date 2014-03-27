@@ -1,4 +1,4 @@
-<div ng-show="createEntry" class="modal fade bs-example-modal-lg" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+<div ng-show="createEntryModal" class="modal fade bs-example-modal-lg" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
   <div class="modal-dialog modal-lg">
     <div class="modal-content">
       <div class="modal-header">
@@ -7,17 +7,19 @@
       </div>
       <div class="modal-body">
         <!-- begin form -->
-        <form ng-submit="submit()" role="form">
+        <form ng-submit="submit()" role="form" name="link" action="/entries/create" method="post" novalidate>
           <div class="form-group row">
             <div class="col-xs-12">
               <label for="code">Enter a link related to your question (optional):</label><br>
-                <input type="text" ng-model="link" ng-blur="linkChecker()" ng-style="" class="form-control" /><br>
+                <input type="url" name="url" placeholder="enter a url like: http://www.huffingtonpost.com/healthy-living/" ng-model="link.url" ng-blur="linkChecker()" ng-style="" class="form-control" required><br>
+                <!-- <p class="help-block error" ng-show={'has-error': link.url.$dirty && link.url.$invalid, 'has-success': link.url.$dirty && !link.url.$invalid}>Please enter a url</p> -->
+                <!-- <span class="error" ng-show="link.url.$error.url">Not valid url!</span> -->
             </div>
           </div>
           <div class="form-group row">
             <div class="col-xs-12">
               <label for="code">Enter a yes or no question:</label><br>
-                <input type="text" ng-model="question" ng-style="" class="form-control" /><br>
+                <input type="text" placeholder='try something like: "Is this healthy?"' ng-model="question" ng-style="" class="form-control" /><br>
             </div>
           </div>
         </form>

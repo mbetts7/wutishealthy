@@ -5,8 +5,8 @@ feedCtrl.controller 'feedCtrl', ["$scope", "Entry", "$http"
     $scope.entries = Entry.query()
 
     $scope.linkChecker = () ->
-      readability_api_link = "https://www.readability.com/api/content/v1/parser?url=" + $scope.link + "&token=bdaa7809dc9a543000fe05d937148acd74eb3d76" + "&callback=JSON_CALLBACK"
-      console.log readability_api_link
+      # if $scope.link.url.$valid
+      readability_api_link = "https://www.readability.com/api/content/v1/parser?url=" + $scope.link.url + "&token=bdaa7809dc9a543000fe05d937148acd74eb3d76" + "&callback=JSON_CALLBACK"
       $http(
         method: "jsonp"
         url: readability_api_link
@@ -21,18 +21,12 @@ feedCtrl.controller 'feedCtrl', ["$scope", "Entry", "$http"
         # show error / alert and red box, don't allow submit
 
     # Modal basic functionality
-    $scope.createEntry = false
     $scope.open = ->
-      $scope.createEntry = true
+      $scope.createEntryModal = true
     $scope.submit = () ->
       # grab object from link checker and question submitted
       # append object to DOM
     $scope.cancel = ->
-      $scope.createEntry = false
+      $scope.createEntryModal = false
 
 ]
-
-# feedCtrl.config ["$httpProvider",
-#  ($httpProvider)->
-#    $httpProvider.defaults.headers.common['X-CSRF-Token'] = $('meta[name=csrf-token]').attr('content')
-#]
