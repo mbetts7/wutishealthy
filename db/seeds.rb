@@ -29,7 +29,7 @@ entries << Entry.create(
 entries << Entry.create(
   image_url: '', 
   link_url: 'http://well.blogs.nytimes.com/2014/03/17/study-questions-fat-and-heart-disease-link/?_php=true&_type=blogs&_php=true&_type=blogs&ref=nutrition&_r=1&gwh=1F2E84156208B88B2D8105F70FA5ABBE&gwt=regi', 
-  readability_title: 'http://well.blogs.nytimes.com/2014/03/17/study-questions-fat-and-heart-disease-link/?_php=true', 
+  readability_title: 'Study Questions Fat and Heart Disease Link', 
   readability_author: "ANAHAD O'CONNOR", 
   readability_domain: 'well.blogs.nytimes.com', 
   readability_word_count: 1126, 
