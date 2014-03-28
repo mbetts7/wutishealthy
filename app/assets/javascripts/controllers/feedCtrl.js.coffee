@@ -2,10 +2,14 @@ feedCtrl = angular.module "feedCtrl", ["ui.bootstrap"]
 
 feedCtrl.controller 'feedCtrl', ["$scope", "Entry", "$http" 
   ($scope, Entry, $http) ->
-    $scope.entries = Entry.query()
+    
+    # Convert model query resource object into an array.  This way we can push objects onto it for DOM manipulation.
+    Entry.query (data) ->
+      $scope.entries = []
+      angular.forEach data, (entry, index) ->
+        $scope.entries.push entry
 
     $scope.linkChecker = () ->
-      # if $scope.link.url.$valid
       readability_api_link = "https://www.readability.com/api/content/v1/parser?url=" + $scope.link.url + "&token=bdaa7809dc9a543000fe05d937148acd74eb3d76" + "&callback=JSON_CALLBACK"
       $http(
         method: "jsonp"
@@ -13,12 +17,9 @@ feedCtrl.controller 'feedCtrl', ["$scope", "Entry", "$http"
       ).success((data) ->
         console.log(data)
         $scope.link_info = data
-        # if 200-299 success code then show green ng-style
-        # grab object and store it in variable for use in save
       ).error (data) ->
         console.log(data)
         $scope.theStatus = "error"
-        # show error / alert and red box, don't allow submit
 
     # Modal basic functionality
     $scope.open = ->
@@ -32,6 +33,7 @@ feedCtrl.controller 'feedCtrl', ["$scope", "Entry", "$http"
       entry.readability_short_url = $scope.link_info.short_url
       entry.question = $scope.question
       Entry.save(entry)
+      $scope.entries.unshift entry
       console.log(entry)
       # grab object from link checker and question submitted
       # append object to DOM
