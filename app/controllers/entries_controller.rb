@@ -15,7 +15,6 @@ class EntriesController < ApplicationController
   end
 
   def update
-    binding.pry
     entry = Entry.find(params[:id])
     entry.update_attributes(params[:entry].permit(:vote_yes, :vote_no, :vote_total))
 

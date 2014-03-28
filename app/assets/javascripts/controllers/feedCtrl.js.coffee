@@ -58,5 +58,5 @@ feedCtrl.controller 'feedCtrl', ["$scope", "Entry", "$http"
       console.log "yes votes: " + entry.vote_yes
       console.log "no votes: " + entry.vote_no
       console.log entry
-      # Entry.update(entry)
+      Entry.update {id: entry.id}, entry
 ]
