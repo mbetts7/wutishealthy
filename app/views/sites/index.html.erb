@@ -1,7 +1,6 @@
 <%= render 'layouts/nav' %>
 
 <div class="bg_feed col-xs-12" ng-controller="feedCtrl">
-  <h2> Trending in the health scene: </h2>
   <button class="btn btn-warning btn-md" ng-click="open()" data-toggle="modal" data-target="#myModal">Post a link and poll the public</button>
     <%= render partial: 'entries/create' %>
   <div>
@@ -14,11 +13,14 @@
             {{entry.readability_title}}
           </a>
         </h3>
-        <p class="article-word-count"><em>
-            <a href="{{entry.link_url}}" class="article-origin" target="_blank"> {{entry.readability_domain}} </a>
-            <span> |  words: {{entry.readability_word_count}}</span></em>
+        <p class="article-word-count">
+          <em>
+            
+            <span> Word count: {{entry.readability_word_count}} | @{{entry.user.username}} posted this on {{entry.created_at | date:'MMMM dd, yyyy'}}
+            </span>
           <br>
-            <span> @{{entry.user.username}} posted this on {{entry.created_at | date:'MMMM dd, yyyy'}}.  <a href="#" data-toggle="collapse" data-target="#accordian{{entry.id}}"> Click for excerpt </a></span>
+            <a href="#" data-toggle="collapse" data-target="#accordian{{entry.id}}"> Click for excerpt </a><span> | </span><a href="{{entry.link_url}}" class="article-origin" target="_blank"> {{entry.readability_domain}} </a>
+        </em>
         </p>
         <div>
           <p id="accordian{{entry.id}}" class="collapse" >
@@ -28,7 +30,7 @@
         <!-- Question and progress bar-->
         <div class="col-xs-10">
           <div class="question">
-            <h4>Yes or No: {{entry.question}}</h4>
+            <h4>{{entry.question}}</h4>
           </div>
           <div class="progress progress-striped">
             <div class="progress-bar progress-bar-success" style="width: {{entry.vote_yes / entry.vote_total * 100}}%">
