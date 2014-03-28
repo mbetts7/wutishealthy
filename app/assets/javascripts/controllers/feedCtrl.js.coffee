@@ -32,8 +32,8 @@ feedCtrl.controller 'feedCtrl', ["$scope", "Entry", "$http"
       entry.readability_word_count = $scope.link_info.word_count
       entry.readability_short_url = $scope.link_info.short_url
       entry.question = $scope.question
-      Entry.save(entry)
-      $scope.entries.unshift entry
+      saved_entry = Entry.save(entry)
+      $scope.entries.unshift saved_entry
       console.log(entry)
       # grab object from link checker and question submitted
       # append object to DOM
@@ -41,22 +41,22 @@ feedCtrl.controller 'feedCtrl', ["$scope", "Entry", "$http"
       $scope.createEntryModal = false
 
     $scope.voteYes = (entry) ->
-      entry.votes = entry.votes || {}
-      entry.votes.total = entry.votes.total || 0
-      entry.votes.yes = entry.votes.yes || 0
-      entry.votes.total += 1
-      entry.votes.yes +=1
-
-      console.log "yes votes: " + entry.votes.yes
-      console.log "no votes: " + entry.votes.no
+      entry.vote_total = entry.vote_total || 0
+      entry.vote_yes = entry.vote_yes || 0
+      entry.vote_total += 1
+      entry.vote_yes +=1
+      console.log "yes votes: " + entry.vote_yes
+      console.log "no votes: " + entry.vote_no
+      console.log entry
+      Entry.update {id: entry.id}, entry
 
     $scope.voteNo = (entry) ->
-      entry.votes = entry.votes || {}
-      entry.votes.total = entry.votes.total || 0
-      entry.votes.no = entry.votes.no || 0
-      entry.votes.total += 1
-      entry.votes.no +=1
-      entry.votes.no_percentage = 100 - entry.votes.yes_percentage
-      console.log "yes votes: " + entry.votes.yes
-      console.log "no votes: " + entry.votes.no
+      entry.vote_total = entry.vote_total || 0
+      entry.vote_no = entry.vote_no || 0
+      entry.vote_total += 1
+      entry.vote_no +=1
+      console.log "yes votes: " + entry.vote_yes
+      console.log "no votes: " + entry.vote_no
+      console.log entry
+      # Entry.update(entry)
 ]

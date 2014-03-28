@@ -31,10 +31,10 @@
               <h4>Yes or No: {{entry.question}}</h4>
             </div>
             <div class="progress progress-striped">
-              <div class="progress-bar progress-bar-success" style="width: {{entry.votes.yes / entry.votes.total * 100}}%">
+              <div class="progress-bar progress-bar-success" style="width: {{entry.vote_yes / entry.vote_total * 100}}%">
                 <span class="sr-only">[put % yes here]</span>
               </div>
-              <div class="progress-bar progress-bar-danger" style="width: {{entry.votes.no / entry.votes.total * 100}}%">
+              <div class="progress-bar progress-bar-danger" style="width: {{entry.vote_no / entry.vote_total * 100}}%">
                 <span class="sr-only">[put % yes here]</span>
               </div>
             </div>
