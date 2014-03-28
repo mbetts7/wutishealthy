@@ -5,44 +5,43 @@
   <button class="btn btn-warning btn-md" ng-click="open()" data-toggle="modal" data-target="#myModal">Post a link and poll the public</button>
     <%= render partial: 'entries/create' %>
   <div>
+    <!-- Iterate over each entry -->
     <div ng-repeat="entry in entries">
-        <div class="col-xs-10 entry_border">
-          
-          <h3 class="article-title">
-            <a href="{{entry.link_url}}" target="_blank">
-              {{entry.readability_title}}
-            </a>
-          </h3>
-          <p class="article-word-count"><em>
-            <a href="{{entry.link_url}}" class="article-origin" target="_blank">
-              {{entry.readability_domain}} 
-            </a>
-              <span> |  word count: </span>{{entry.readability_word_count}}  |  posted: {{entry.created_at | date:'MMMM dd, yyyy'}}</em>
+      <div class="col-xs-10 entry_border">  
+        <!-- Beginning of entry block-->
+        <h3 class="article-title">
+          <a href="{{entry.link_url}}" target="_blank">
+            {{entry.readability_title}}
+          </a>
+        </h3>
+        <p class="article-word-count"><em>
+            <a href="{{entry.link_url}}" class="article-origin" target="_blank"> {{entry.readability_domain}} </a>
+            <span> |  words: {{entry.readability_word_count}}</span></em>
+          <br>
+            <span> @{{entry.user.username}} posted this on {{entry.created_at | date:'MMMM dd, yyyy'}}.  <a href="#" data-toggle="collapse" data-target="#accordian{{entry.id}}"> Click for excerpt </a></span>
+        </p>
+        <div>
+          <p id="accordian{{entry.id}}" class="collapse" >
+            Excerpt: {{entry.readability_excerpt}}
           </p>
-          <div class="excerpt">
-            <p class="excerpt-bod" >
-              Excerpt: {{entry.readability_excerpt}} <span class="user-inline"> posted by: {{entry.user.username}}</span>
-            </p>
-          </div>  
-          <!-- Question and progress bar-->
-          <!-- Progress bar -->
-          <div class="col-xs-10">
-            <div class="question">
-              <h4>Yes or No: {{entry.question}}</h4>
-            </div>
-            <div class="progress progress-striped">
-              <div class="progress-bar progress-bar-success" style="width: {{entry.vote_yes / entry.vote_total * 100}}%">
-                <span class="sr-only">[put % yes here]</span>
-              </div>
-              <div class="progress-bar progress-bar-danger" style="width: {{entry.vote_no / entry.vote_total * 100}}%">
-                <span class="sr-only">[put % yes here]</span>
-              </div>
-            </div>
-            <button ng-click="voteYes(entry)" class="btn btn-success pull-left">Vote Yes</button>
-            <button ng-click="voteNo(entry)" class="btn btn-danger pull-right">Vote No</button>
+        </div>  
+        <!-- Question and progress bar-->
+        <div class="col-xs-10">
+          <div class="question">
+            <h4>Yes or No: {{entry.question}}</h4>
           </div>
+          <div class="progress progress-striped">
+            <div class="progress-bar progress-bar-success" style="width: {{entry.vote_yes / entry.vote_total * 100}}%">
+              <span class="sr-only">[put % yes here]</span>
+            </div>
+            <div class="progress-bar progress-bar-danger" style="width: {{entry.vote_no / entry.vote_total * 100}}%">
+              <span class="sr-only">[put % yes here]</span>
+            </div>
+          </div>
+          <button ng-click="voteYes(entry)" class="btn btn-success pull-left">Vote Yes</button>
+          <button ng-click="voteNo(entry)" class="btn btn-danger pull-right">Vote No</button>
         </div>
+      </div>
     </div>
   </div>
-
 </div>
