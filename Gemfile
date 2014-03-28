@@ -39,6 +39,7 @@ gem 'quiet_assets', :group => :development
 
 gem 'unicorn'
 gem "rails_12factor", group: :production
+gem 'unicorn-rails', :groups => [:development, :test]
 
 # Use unicorn as the app server
 # gem 'unicorn'
